@@ -1,0 +1,4 @@
+plugin.description: Show peer ID in peer list
+plugin.author: Js0n
+plugin.version: 1.0
+plugin.help: https://github.com/JasonKhew96/ruTorrent-peerid
