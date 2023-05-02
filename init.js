@@ -23,9 +23,9 @@ rTorrentStub.prototype.getpeersResponse = function (values) {
   if (plugin.enabled) {
     for (var j = 0; j < values.length; j++) {
       var data = values[j];
-      var match = data[11].match(/^(-[A-Z~][A-Z~][A-Z0-9][A-Z0-9]..-)/i);
+      var match = data[11].match(/^(-[A-Z~][A-Z~][A-Z0-9][A-Z0-9]..-)/i) || [];
       if (match.length <= 0) {
-        peers[data[0]].peer_id = "Unknown";
+        peers[data[0]].peer_id = unescape(data[11]);
       } else {
         peers[data[0]].peer_id = decodeURIComponent(match[1]);
       }
